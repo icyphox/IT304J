@@ -1,0 +1,42 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Hotel Website | Services</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<h1>OUR HOTEL SERVICES</h1><br>
+							<div>
+								<B>Service1 : </B>SWIMMING POOL<span id="Service1"> </span><br><br>
+				                <B>Service2 : </B>Complementary Food<span id="Service2"> </span><br></br>
+					             <B>Service3 : </B>Free Taxi service<span id="Service3"> </span><br><br>
+                                <B>Service4 : </B> Free WIFI 24/7<span id="Service4"> </span><br><br>
+								<B>Service5 : </B> Clean and dirt free enviroment<span id="Service4"> </span><br><br>
+								<B>Service6 : </B>GYM service<span id="Service4"> </span><br><br>
+								<B>Service7 : </B> Spa facilites<span id="Service4"> </span><br><br>
+								</div>
+						<script>
+						if(window.XMLHttpRequest)
+						{
+						xmlhttp= new XMLHttpRequest();
+						}
+						else
+						{
+						xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+						}
+						xmlhttp.open("GET", "Services.xml",false);
+						xmlhttp.send();
+						xmlDoc= xmlhttp.responseXML;
+						document.getElementById("Service1").innerHTML= xmlDoc.getELementsByTagName("Service1")[0].childNodes[0].nodeValue;
+						document.getElementById("Service2").innerHTML= xmlDoc.getELementsByTagName("Service2")[0].childNodes[0].nodeValue;
+						document.getElementById("Service3").innerHTML= xmlDoc.getELementsByTagName("Service3")[0].childNodes[0].nodeValue;
+                        document.getElementById("Service4").innerHTML= xmlDoc.getELementsByTagName("Service4")[0].childNodes[0].nodeValue;
+                        document.getElementById("Service5").innerHTML= xmlDoc.getELementsByTagName("Service5")[0].childNodes[0].nodeValue;
+                        document.getElementById("Service6").innerHTML= xmlDoc.getELementsByTagName("Service6")[0].childNodes[0].nodeValue;
+                        document.getElementById("Service7").innerHTML= xmlDoc.getELementsByTagName("Service7")[0].childNodes[0].nodeValue;						
+	                   </script>
+					 </body>
+                     </html>
+
